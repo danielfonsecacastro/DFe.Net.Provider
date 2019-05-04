@@ -2,7 +2,7 @@
 
 namespace DFe.Net.Facade.Domain.Enums
 {
-    public enum TipoDocumentoFiscal
+    public enum TipoOperacao
     {
         [Description("Entrada")] Entrada = 0,
         [Description("Saida")] Saida = 1

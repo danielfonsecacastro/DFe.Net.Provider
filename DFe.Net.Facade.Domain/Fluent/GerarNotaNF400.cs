@@ -1,16 +1,18 @@
 ﻿using DFe.Net.Facade.Domain.Entities;
 using DFe.Net.Facade.Domain.Enums;
-using System;
 
 namespace DFe.Net.Facade.Domain.Fluent
 {
-    public class GerarNota : IGerarNota
+    public class GerarNotaNF400 : IGerarNota
     {
         private Entities.NFe _nfe;
 
-        public GerarNota()
+        public GerarNotaNF400()
         {
-            _nfe = new Entities.NFe();
+            _nfe = new Entities.NFe
+            {
+                Versao = Enums.Versao.Versao400,
+            };
         }
         public Entities.NFe Gerar()
         {
@@ -19,6 +21,7 @@ namespace DFe.Net.Facade.Domain.Fluent
 
         public IGerarNota Identificacao(Identificacao identificacao)
         {
+            _nfe.Identificacao = identificacao;
             return this;
         }
 

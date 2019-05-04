@@ -5,27 +5,27 @@ namespace DFe.Net.Facade.Domain.Enums
     public enum TipoEmissao
     {
         [Description("Normal")]
-        teNormal = 1,
+        Normal = 1,
 
         [Description("Contingência FS-IA")]
-        teFSIA = 2,
+        FSIA = 2,
 
         [Description("Contingência SCAN")]
-        teSCAN = 3,
+        SCAN = 3,
 
         [Description("Contingência DPEC")]
-        teEPEC = 4,
+        EPEC = 4,
 
         [Description("Contingência FS-DA")]
-        teFSDA = 5,
+        FSDA = 5,
 
         [Description("Contingência SVC-AN")]
-        teSVCAN = 6,
+        SVCAN = 6,
 
         [Description("Contingência SVC-RS")]
-        teSVCRS = 7,
+        SVCRS = 7,
 
         [Description("Contingência off-line")]
-        teOffLine = 9
+        OffLine = 9
     }
 }
