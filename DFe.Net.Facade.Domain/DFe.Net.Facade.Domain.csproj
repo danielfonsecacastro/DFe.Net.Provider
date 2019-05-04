@@ -65,9 +65,13 @@
     <Compile Include="Entities\Identificacao.cs" />
     <Compile Include="Entities\NFe.cs" />
     <Compile Include="Enums\Estado.cs" />
+    <Compile Include="Enums\Finalidade.cs" />
     <Compile Include="Enums\ModeloDocumento.cs" />
     <Compile Include="Enums\NaturezaOperacao.cs" />
+    <Compile Include="Enums\TipoAmbiente.cs" />
     <Compile Include="Enums\TipoDocumentoFiscal.cs" />
+    <Compile Include="Enums\TipoEmissao.cs" />
+    <Compile Include="Enums\TipoImpressao.cs" />
     <Compile Include="Enums\Versao.cs" />
     <Compile Include="Fluent\GerarNota.cs" />
     <Compile Include="Fluent\IGerarNota.cs" />
