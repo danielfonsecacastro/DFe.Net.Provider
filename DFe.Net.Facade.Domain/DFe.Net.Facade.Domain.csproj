@@ -62,8 +62,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\CRT.cs" />
+    <Compile Include="Enums\IndicadorIEDestinario.cs" />
     <Compile Include="Factories\IdentificacaoFactory.cs" />
     <Compile Include="NFe\ChaveAcesso.cs" />
+    <Compile Include="NFe\Destinatario.cs" />
+    <Compile Include="NFe\Emitente.cs" />
+    <Compile Include="NFe\Endereco.cs" />
     <Compile Include="NFe\Identificacao.cs" />
     <Compile Include="NFe\IdentificacaoBase.cs" />
     <Compile Include="NFe\NFe.cs" />

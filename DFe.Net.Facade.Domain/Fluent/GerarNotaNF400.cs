@@ -15,9 +15,16 @@ namespace DFe.Net.Facade.Domain.Fluent
                 Versao = Enums.Versao.Versao400,
             };
         }
+
         public NFe.NFe Gerar()
         {
             return _nfe;
+        }
+
+        public IGerarNota Emitente(Emitente emitente)
+        {
+            _nfe.Emitente = emitente;
+            return this;
         }
 
         public IGerarNota Identificacao(IdentificacaoBase identificacao)
@@ -28,6 +35,12 @@ namespace DFe.Net.Facade.Domain.Fluent
 
         public IGerarNota Versao(Versao versao)
         {
+            return this;
+        }
+
+        public IGerarNota Destinatario(Destinatario destinatario)
+        {
+            _nfe.Destinatario = destinatario;
             return this;
         }
     }

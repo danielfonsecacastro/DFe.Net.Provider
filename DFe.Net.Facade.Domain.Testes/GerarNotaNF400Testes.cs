@@ -92,6 +92,28 @@ namespace NotaNF400Testes
             resultado.Identificacao.Should().Be(identificacao);
         }
 
-      
+        [Test]
+        public void DeveGerarEmitenteCorretamente()
+        {
+            var emitente = new Emitente(new Endereco { }) { };
+
+            var resultado = _nota400
+                .Emitente(emitente)
+                .Gerar();
+
+            resultado.Emitente.Should().Be(emitente);
+        }
+
+        [Test]
+        public void DeveGerarDestinatarioCorretamente()
+        {
+            var destinatario = new Destinatario(new Endereco { }) { };
+
+            var resultado = _nota400
+                .Destinatario(destinatario)
+                .Gerar();
+
+            resultado.Destinatario.Should().Be(destinatario);
+        }
     }
 }

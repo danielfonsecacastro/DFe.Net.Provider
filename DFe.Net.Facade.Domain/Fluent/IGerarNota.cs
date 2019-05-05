@@ -8,6 +8,8 @@ namespace DFe.Net.Facade.Domain.Fluent
     {
         IGerarNota Versao(Versao versao);
         IGerarNota Identificacao(IdentificacaoBase identificacao);
+        IGerarNota Emitente(Emitente emitente);
+        IGerarNota Destinatario(Destinatario destinatario);
         NFe.NFe Gerar();
     }
 }
