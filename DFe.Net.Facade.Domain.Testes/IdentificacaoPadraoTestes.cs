@@ -149,7 +149,7 @@ namespace NotaNF400Testes
         {
             var resultado = _nota400.Gerar();
 
-            resultado.Identificacao.CodigoMunicipio.Should().Be(default);
+            resultado.Identificacao.CodigoMunicipio.Should().Be(0);
         }
 
         [Test]
@@ -157,7 +157,7 @@ namespace NotaNF400Testes
         {
             var resultado = _nota400.Gerar();
 
-            resultado.Identificacao.DataContigencia.Should().Be(default);
+            resultado.Identificacao.DataContigencia.Should().Be(DateTimeOffset.MinValue);
         }
 
         [Test]
@@ -165,7 +165,7 @@ namespace NotaNF400Testes
         {
             var resultado = _nota400.Gerar();
 
-            resultado.Identificacao.DestinoOperacao.Should().Be(default);
+            resultado.Identificacao.DestinoOperacao.Should().BeNull();
         }
 
         [Test]
@@ -173,7 +173,7 @@ namespace NotaNF400Testes
         {
             var resultado = _nota400.Gerar();
 
-            resultado.Identificacao.DigitoVerificador.Should().Be(default);
+            resultado.Identificacao.DigitoVerificador.Should().Be(0);
         }
 
         [Test]
@@ -189,7 +189,7 @@ namespace NotaNF400Testes
         {
             var resultado = _nota400.Gerar();
 
-            resultado.Identificacao.IndicadorPagamento.Should().Be(default);
+            resultado.Identificacao.IndicadorPagamento.Should().BeNull();
         }
 
         [Test]
@@ -197,7 +197,7 @@ namespace NotaNF400Testes
         {
             var resultado = _nota400.Gerar();
 
-            resultado.Identificacao.Justificativa.Should().Be(default);
+            resultado.Identificacao.Justificativa.Should().BeNull();
         }
 
         [Test]
@@ -205,7 +205,7 @@ namespace NotaNF400Testes
         {
             var resultado = _nota400.Gerar();
 
-            resultado.Identificacao.Numero.Should().Be(default);
+            resultado.Identificacao.Numero.Should().Be(0);
         }
     }
 }
