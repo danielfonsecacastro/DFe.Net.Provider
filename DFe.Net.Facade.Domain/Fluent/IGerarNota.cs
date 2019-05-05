@@ -1,13 +1,15 @@
-﻿using DFe.Net.Facade.Domain.Entities;
+﻿using DFe.Net.Facade.Domain.NFe;
 using DFe.Net.Facade.Domain.Enums;
+using DFe.Net.Facade.Domain.Factories;
 
 namespace DFe.Net.Facade.Domain.Fluent
 {
     public interface IGerarNota
     {
         IGerarNota Versao(Versao versao);
-        IGerarNota Identificacao(Identificacao identificacao);
+        IGerarNota Identificacao(IdentificacaoBase identificacao);
+        IGerarNota Identificacao(IdentificacaoFactory factory);
 
-        Entities.NFe Gerar();
+        NFe.NFe Gerar();
     }
 }

@@ -62,9 +62,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\ChaveAcesso.cs" />
-    <Compile Include="Entities\Identificacao.cs" />
-    <Compile Include="Entities\NFe.cs" />
+    <Compile Include="Factories\IdentificacaoFactory.cs" />
+    <Compile Include="NFe\ChaveAcesso.cs" />
+    <Compile Include="NFe\Identificacao.cs" />
+    <Compile Include="NFe\IdentificacaoBase.cs" />
+    <Compile Include="NFe\NFe.cs" />
     <Compile Include="Enums\ConsumidorFinal.cs" />
     <Compile Include="Enums\DestinoOperacao.cs" />
     <Compile Include="Enums\Estado.cs" />
@@ -79,6 +81,7 @@
     <Compile Include="Enums\TipoEmissao.cs" />
     <Compile Include="Enums\TipoImpressao.cs" />
     <Compile Include="Enums\Versao.cs" />
+    <Compile Include="Factories\IdentificacaoPadrao.cs" />
     <Compile Include="Fluent\GerarNotaNF400.cs" />
     <Compile Include="Fluent\IGerarNota.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,6 +90,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Entities\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,10 +1,10 @@
 ﻿using DFe.Net.Facade.Domain.Enums;
 
-namespace DFe.Net.Facade.Domain.Entities
+namespace DFe.Net.Facade.Domain.NFe
 {
     public class NFe
     {
         public Versao Versao { get; set; }
-        public Identificacao Identificacao { get; set; }
+        public IdentificacaoBase Identificacao { get; set; }
     }
 }

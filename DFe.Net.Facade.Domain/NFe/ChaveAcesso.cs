@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace DFe.Net.Facade.Domain.Entities
+namespace DFe.Net.Facade.Domain.NFe
 {
     public class ChaveAcesso
     {

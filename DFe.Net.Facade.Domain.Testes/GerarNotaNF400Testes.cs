@@ -1,11 +1,12 @@
-﻿using DFe.Net.Facade.Domain.Entities;
+﻿using DFe.Net.Facade.Domain.NFe;
 using DFe.Net.Facade.Domain.Enums;
 using DFe.Net.Facade.Domain.Fluent;
 using FluentAssertions;
 using NUnit.Framework;
 using System;
+using DFe.Net.Facade.Domain.Factories;
 
-namespace DFe.Net.Facade.Domain.Testes
+namespace NotaNF400Testes
 {
     public class GerarNotaNF400Testes
     {
@@ -77,7 +78,7 @@ namespace DFe.Net.Facade.Domain.Testes
                 PresencaComprador = PresencaComprador.Presencial,
                 ProcessoEmissao = ProcessoEmissao.AplicativoContribuinte,
                 Serie = 1,
-                Tipo = TipoOperacao.Saida,
+                TipoOperacao = TipoOperacao.Saida,
                 TipoAmbiente = TipoAmbiente.Homologacao,
                 TipoEmissao = TipoEmissao.Normal,
                 TipoImpressao = TipoImpressao.DanfeNFCe,
@@ -90,5 +91,7 @@ namespace DFe.Net.Facade.Domain.Testes
 
             resultado.Identificacao.Should().Be(identificacao);
         }
+
+      
     }
 }

@@ -1,12 +1,12 @@
 ﻿using DFe.Net.Facade.Domain.Enums;
 using System;
 
-namespace DFe.Net.Facade.Domain.Entities
+namespace DFe.Net.Facade.Domain.NFe
 {
     /// <summary>
     /// Identificação da Nota Fiscal eletrônica
     /// </summary>
-    public class Identificacao
+    public  abstract class IdentificacaoBase
     {
         /// <summary>
         ///     B02 - Código da UF do emitente do Documento Fiscal. Utilizar a Tabela do IBGE.
@@ -14,7 +14,7 @@ namespace DFe.Net.Facade.Domain.Entities
         public Estado Estado { get; set; }
 
         /// <summary>
-        ///     B04 - Descrição da Natureza da Operação
+        ///     B03 - Código numérico que compõe a Chave de Acesso. Número aleatório gerado pelo emitente para cada NF-e.
         /// </summary>
         public ChaveAcesso ChaveAcesso { get; set; }
 
@@ -61,7 +61,7 @@ namespace DFe.Net.Facade.Domain.Entities
         /// <summary>
         ///     B11 - Tipo do Documento Fiscal
         /// </summary>
-        public TipoOperacao Tipo { get; set; }
+        public TipoOperacao TipoOperacao { get; set; }
 
         /// <summary>
         ///     B11a - Identificador de Local de destino da operação
