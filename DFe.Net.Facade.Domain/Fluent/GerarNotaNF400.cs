@@ -26,12 +26,6 @@ namespace DFe.Net.Facade.Domain.Fluent
             return this;
         }
 
-        public IGerarNota Identificacao(IdentificacaoFactory factory)
-        {
-            _nfe.Identificacao = factory.Gerar();
-            return this;
-        }
-
         public IGerarNota Versao(Versao versao)
         {
             return this;

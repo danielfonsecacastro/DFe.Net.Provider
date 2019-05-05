@@ -2,8 +2,21 @@
 
 namespace DFe.Net.Facade.Domain.Factories
 {
-    public abstract class IdentificacaoFactory
+    public static class IdentificacaoFactory
     {
-        public abstract IdentificacaoBase Gerar();
+        public static IdentificacaoBase Gerar(TipoIdentificacao tipo)
+        {
+            switch (tipo)
+            {
+                case TipoIdentificacao.Padrao400:
+                default:
+                    return new IdentificacaoPadrao400();
+            }
+        }
+    }
+
+    public enum TipoIdentificacao
+    {
+        Padrao400
     }
 }

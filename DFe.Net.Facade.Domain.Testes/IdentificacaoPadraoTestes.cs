@@ -14,21 +14,22 @@ namespace NotaNF400Testes
         [SetUp]
         public void Setup()
         {
-            _nota400 = new GerarNotaNF400();
+            _nota400 = new GerarNotaNF400()
+                .Identificacao(IdentificacaoFactory.Gerar(TipoIdentificacao.Padrao400));
         }
 
         [Test]
-        public void DeveGerarChaveAcessoCorretamente()
+        public void DeveriaGerarChaveAcessoCorretamente()
         {
-            var resultado = _nota400.Identificacao(new IdentificacaoPadrao()).Gerar();
+            var resultado = _nota400.Gerar();
 
             resultado.Identificacao.ChaveAcesso.Should().NotBeNull();
         }
 
         [Test]
-        public void DeveGerarDataEmissaoCorretamente()
+        public void DeveriaGerarDataEmissaoCorretamente()
         {
-            var resultado = _nota400.Identificacao(new IdentificacaoPadrao()).Gerar();
+            var resultado = _nota400.Gerar();
 
             resultado.Identificacao.DataEmissao.Should()
                 .HaveDay(DateTime.Now.Day).And
@@ -37,9 +38,9 @@ namespace NotaNF400Testes
         }
 
         [Test]
-        public void DeveGerarDataSaidaEntradaCorretamente()
+        public void DeveriaGerarDataSaidaEntradaCorretamente()
         {
-            var resultado = _nota400.Identificacao(new IdentificacaoPadrao()).Gerar();
+            var resultado = _nota400.Gerar();
 
             resultado.Identificacao.DataSaidaEntrada.Should()
                 .HaveDay(DateTime.Now.Day).And
@@ -48,97 +49,97 @@ namespace NotaNF400Testes
         }
 
         [Test]
-        public void DeveGerarConsumidorFinalCorretamente()
+        public void DeveriaGerarConsumidorFinalCorretamente()
         {
-            var resultado = _nota400.Identificacao(new IdentificacaoPadrao()).Gerar();
+            var resultado = _nota400.Gerar();
 
             resultado.Identificacao.ConsumidorFinal.Should().Be(ConsumidorFinal.Normal);
         }
 
         [Test]
-        public void DeveGerarFinalidadeCorretamente()
+        public void DeveriaGerarFinalidadeCorretamente()
         {
-            var resultado = _nota400.Identificacao(new IdentificacaoPadrao()).Gerar();
+            var resultado = _nota400.Gerar();
 
             resultado.Identificacao.Finalidade.Should().Be(Finalidade.Normal);
         }
 
         [Test]
-        public void DeveGerarModeloCorretamente()
+        public void DeveriaGerarModeloCorretamente()
         {
-            var resultado = _nota400.Identificacao(new IdentificacaoPadrao()).Gerar();
+            var resultado = _nota400.Gerar();
 
             resultado.Identificacao.Modelo.Should().Be(ModeloDocumento.NFe);
         }
 
         [Test]
-        public void DeveGerarNaturezaOperacaoCorretamente()
+        public void DeveriaGerarNaturezaOperacaoCorretamente()
         {
-            var resultado = _nota400.Identificacao(new IdentificacaoPadrao()).Gerar();
+            var resultado = _nota400.Gerar();
 
             resultado.Identificacao.NaturezaOperacao.Should().Be(NaturezaOperacao.Venda);
         }
 
         [Test]
-        public void DeveGerarPresencaCompradorCorretamente()
+        public void DeveriaGerarPresencaCompradorCorretamente()
         {
-            var resultado = _nota400.Identificacao(new IdentificacaoPadrao()).Gerar();
+            var resultado = _nota400.Gerar();
 
             resultado.Identificacao.PresencaComprador.Should().Be(PresencaComprador.Presencial);
         }
 
         [Test]
-        public void DeveGerarSerieCorretamente()
+        public void DeveriaGerarSerieCorretamente()
         {
-            var resultado = _nota400.Identificacao(new IdentificacaoPadrao()).Gerar();
+            var resultado = _nota400.Gerar();
 
             resultado.Identificacao.Serie.Should().Be(1);
         }
 
         [Test]
-        public void DeveGerarTipoAmbienteCorretamente()
+        public void DeveriaGerarTipoAmbienteCorretamente()
         {
-            var resultado = _nota400.Identificacao(new IdentificacaoPadrao()).Gerar();
+            var resultado = _nota400.Gerar();
 
             resultado.Identificacao.TipoAmbiente.Should().Be(TipoAmbiente.Producao);
         }
 
         [Test]
-        public void DeveGerarVersaoAplicativoCorretamente()
+        public void DeveriaGerarVersaoAplicativoCorretamente()
         {
-            var resultado = _nota400.Identificacao(new IdentificacaoPadrao()).Gerar();
+            var resultado = _nota400.Gerar();
 
             resultado.Identificacao.VersaoAplicativo.Should().Be("4.0");
         }
 
         [Test]
-        public void DeveGerarTipoImpressaoCorretamente()
+        public void DeveriaGerarTipoImpressaoCorretamente()
         {
-            var resultado = _nota400.Identificacao(new IdentificacaoPadrao()).Gerar();
+            var resultado = _nota400.Gerar();
 
             resultado.Identificacao.TipoImpressao.Should().Be(TipoImpressao.DanfeNormalRetrato);
         }
 
         [Test]
-        public void DeveGerarTipoEmissaoCorretamente()
+        public void DeveriaGerarTipoEmissaoCorretamente()
         {
-            var resultado = _nota400.Identificacao(new IdentificacaoPadrao()).Gerar();
+            var resultado = _nota400.Gerar();
 
             resultado.Identificacao.TipoEmissao.Should().Be(TipoEmissao.Normal);
         }
 
         [Test]
-        public void DeveGerarTipoOperacaoCorretamente()
+        public void DeveriaGerarTipoOperacaoCorretamente()
         {
-            var resultado = _nota400.Identificacao(new IdentificacaoPadrao()).Gerar();
+            var resultado = _nota400.Gerar();
 
             resultado.Identificacao.TipoOperacao.Should().Be(TipoOperacao.Saida);
         }
 
         [Test]
-        public void DeveGerarProcessoEmissaoCorretamente()
+        public void DeveriaGerarProcessoEmissaoCorretamente()
         {
-            var resultado = _nota400.Identificacao(new IdentificacaoPadrao()).Gerar();
+            var resultado = _nota400.Gerar();
 
             resultado.Identificacao.ProcessoEmissao.Should().Be(ProcessoEmissao.AplicativoContribuinte);
         }
@@ -146,7 +147,7 @@ namespace NotaNF400Testes
         [Test]
         public void NaoDeveriaGerarCodigoMunicipio()
         {
-            var resultado = _nota400.Identificacao(new IdentificacaoPadrao()).Gerar();
+            var resultado = _nota400.Gerar();
 
             resultado.Identificacao.CodigoMunicipio.Should().Be(default);
         }
@@ -154,15 +155,15 @@ namespace NotaNF400Testes
         [Test]
         public void NaoDeveriaGerarDataContigencia()
         {
-            var resultado = _nota400.Identificacao(new IdentificacaoPadrao()).Gerar();
-            
+            var resultado = _nota400.Gerar();
+
             resultado.Identificacao.DataContigencia.Should().Be(default);
         }
 
         [Test]
         public void NaoDeveriaGerarDestinoOperacao()
         {
-            var resultado = _nota400.Identificacao(new IdentificacaoPadrao()).Gerar();
+            var resultado = _nota400.Gerar();
 
             resultado.Identificacao.DestinoOperacao.Should().Be(default);
         }
@@ -170,7 +171,7 @@ namespace NotaNF400Testes
         [Test]
         public void NaoDeveriaGerarDigitoVerificador()
         {
-            var resultado = _nota400.Identificacao(new IdentificacaoPadrao()).Gerar();
+            var resultado = _nota400.Gerar();
 
             resultado.Identificacao.DigitoVerificador.Should().Be(default);
         }
@@ -178,7 +179,7 @@ namespace NotaNF400Testes
         [Test]
         public void NaoDeveriaGerarEstado()
         {
-            var resultado = _nota400.Identificacao(new IdentificacaoPadrao()).Gerar();
+            var resultado = _nota400.Gerar();
 
             resultado.Identificacao.Estado.Should().Be(0);
         }
@@ -186,7 +187,7 @@ namespace NotaNF400Testes
         [Test]
         public void NaoDeveriaGerarIndicadorPagamento()
         {
-            var resultado = _nota400.Identificacao(new IdentificacaoPadrao()).Gerar();
+            var resultado = _nota400.Gerar();
 
             resultado.Identificacao.IndicadorPagamento.Should().Be(default);
         }
@@ -194,7 +195,7 @@ namespace NotaNF400Testes
         [Test]
         public void NaoDeveriaGerarJustificativa()
         {
-            var resultado = _nota400.Identificacao(new IdentificacaoPadrao()).Gerar();
+            var resultado = _nota400.Gerar();
 
             resultado.Identificacao.Justificativa.Should().Be(default);
         }
@@ -202,7 +203,7 @@ namespace NotaNF400Testes
         [Test]
         public void NaoDeveriaGerarNumero()
         {
-            var resultado = _nota400.Identificacao(new IdentificacaoPadrao()).Gerar();
+            var resultado = _nota400.Gerar();
 
             resultado.Identificacao.Numero.Should().Be(default);
         }

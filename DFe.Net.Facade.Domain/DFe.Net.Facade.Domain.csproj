@@ -81,7 +81,7 @@
     <Compile Include="Enums\TipoEmissao.cs" />
     <Compile Include="Enums\TipoImpressao.cs" />
     <Compile Include="Enums\Versao.cs" />
-    <Compile Include="Factories\IdentificacaoPadrao.cs" />
+    <Compile Include="Factories\IdentificacaoPadrao400.cs" />
     <Compile Include="Fluent\GerarNotaNF400.cs" />
     <Compile Include="Fluent\IGerarNota.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

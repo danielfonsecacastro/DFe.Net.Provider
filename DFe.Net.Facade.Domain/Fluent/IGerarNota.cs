@@ -8,8 +8,6 @@ namespace DFe.Net.Facade.Domain.Fluent
     {
         IGerarNota Versao(Versao versao);
         IGerarNota Identificacao(IdentificacaoBase identificacao);
-        IGerarNota Identificacao(IdentificacaoFactory factory);
-
         NFe.NFe Gerar();
     }
 }
