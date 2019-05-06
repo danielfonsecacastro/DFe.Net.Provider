@@ -10,6 +10,6 @@ namespace DFe.Net.Facade.Domain.Fluent
         IGerarNota Identificacao(IdentificacaoBase identificacao);
         IGerarNota Emitente(Emitente emitente);
         IGerarNota Destinatario(Destinatario destinatario);
-        NFe.NFe Gerar();
+        NFeProvider Gerar();
     }
 }

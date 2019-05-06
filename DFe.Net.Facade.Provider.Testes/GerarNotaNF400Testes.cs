@@ -1,10 +1,10 @@
-﻿using DFe.Net.Facade.Domain.NFe;
-using DFe.Net.Facade.Domain.Enums;
+﻿using DFe.Net.Facade.Domain.Enums;
 using DFe.Net.Facade.Domain.Fluent;
+using DFe.Net.Facade.Domain.NFe;
+using DFe.Net.Facade.Provider;
 using FluentAssertions;
 using NUnit.Framework;
 using System;
-using DFe.Net.Facade.Domain.Factories;
 
 namespace NotaNF400Testes
 {

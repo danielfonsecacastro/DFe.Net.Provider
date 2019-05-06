@@ -1,24 +1,19 @@
-﻿using DFe.Net.Facade.Domain.NFe;
-using DFe.Net.Facade.Domain.Enums;
-using DFe.Net.Facade.Domain.Factories;
+﻿using DFe.Net.Facade.Domain.Enums;
+using DFe.Net.Facade.Domain.Fluent;
+using DFe.Net.Facade.Domain.NFe;
 
-namespace DFe.Net.Facade.Domain.Fluent
+namespace DFe.Net.Facade.Provider
 {
     public class GerarNotaNF400 : IGerarNota
     {
-        private NFe.NFe _nfe;
+        private NFeProvider _nfe;
 
         public GerarNotaNF400()
         {
-            _nfe = new NFe.NFe
+            _nfe = new NFe
             {
-                Versao = Enums.Versao.Versao400,
+                Versao = Domain.Enums.Versao.Versao400,
             };
-        }
-
-        public NFe.NFe Gerar()
-        {
-            return _nfe;
         }
 
         public IGerarNota Emitente(Emitente emitente)
@@ -42,6 +37,11 @@ namespace DFe.Net.Facade.Domain.Fluent
         {
             _nfe.Destinatario = destinatario;
             return this;
+        }
+
+        public NFeProvider Gerar()
+        {
+            return _nfe;
         }
     }
 }
