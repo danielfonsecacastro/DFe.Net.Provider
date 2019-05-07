@@ -10,7 +10,7 @@ namespace NotaNF400Testes
 {
     public class GerarNotaNF400Testes
     {
-        private IGerarNota _gerarNota;
+        private readonly IGerarNota _gerarNota;
 
         public GerarNotaNF400Testes()
         {
@@ -79,7 +79,7 @@ namespace NotaNF400Testes
         [Fact]
         public void DeveriaGerarEmitenteCorretamente()
         {
-            var emitente = new Emitente(new Endereco { }) { };
+            var emitente = new Emitente(new Endereco ()) ;
 
             var resultado = _gerarNota
                 .Emitente(emitente)

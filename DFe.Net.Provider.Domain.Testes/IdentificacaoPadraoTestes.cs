@@ -9,7 +9,7 @@ namespace NotaNF400Testes
 {
     public class IdentificacaoPadraoTestes
     {
-        private IdentificacaoBase _identificao;
+        private readonly IdentificacaoBase _identificao;
 
         public IdentificacaoPadraoTestes()
         {

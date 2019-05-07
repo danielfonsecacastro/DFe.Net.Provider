@@ -1,4 +1,5 @@
 ﻿using DFe.Net.Provider.Domain.NFe;
+using System;
 
 namespace DFe.Net.Provider.Domain.Factories
 {
@@ -9,10 +10,13 @@ namespace DFe.Net.Provider.Domain.Factories
             switch (tipo)
             {
                 case TipoIdentificacao.Padrao400:
-                default:
                     return new IdentificacaoPadrao400();
+                default:
+                    throw new NotImplementedException();
             }
         }
+
+     
     }
 
     public enum TipoIdentificacao

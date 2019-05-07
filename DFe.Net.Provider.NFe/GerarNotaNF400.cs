@@ -6,7 +6,7 @@ namespace DFe.Net.Provider.NFe
 {
     public class GerarNotaNF400 : IGerarNota
     {
-        private NFeProvider _nfe;
+        private readonly NFeProvider _nfe;
 
         public GerarNotaNF400()
         {
