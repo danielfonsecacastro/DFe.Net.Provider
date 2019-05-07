@@ -8,6 +8,7 @@ namespace DFe.Net.Provider.Domain.NFe
         public abstract IdentificacaoBase Identificacao { get; set; }
         public abstract Emitente Emitente { get; set; }
         public abstract Destinatario Destinatario { get; set; }
+        public abstract Transporte Transporte { get; set; }
         public abstract RetornoNFe Emitir();
     }
 }

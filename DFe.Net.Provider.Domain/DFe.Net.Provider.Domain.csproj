@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="NFe\Enums\CRT.cs" />
     <Compile Include="NFe\Enums\IndicadorIEDestinario.cs" />
+    <Compile Include="NFe\Enums\ModalidadeFrete.cs" />
     <Compile Include="NFe\Factories\IdentificacaoFactory.cs" />
     <Compile Include="NFe\ChaveAcesso.cs" />
     <Compile Include="NFe\Destinatario.cs" />
@@ -66,8 +67,15 @@
     <Compile Include="NFe\Enums\Versao.cs" />
     <Compile Include="NFe\Factories\IdentificacaoPadrao400.cs" />
     <Compile Include="NFe\Fluent\IGerarNota.cs" />
+    <Compile Include="NFe\Lacre.cs" />
     <Compile Include="NFe\NFeProvider.cs" />
+    <Compile Include="NFe\Reboque.cs" />
+    <Compile Include="NFe\RetencaoICMSTransporte.cs" />
     <Compile Include="NFe\RetornoNFe.cs" />
+    <Compile Include="NFe\Transportador.cs" />
+    <Compile Include="NFe\Transporte.cs" />
+    <Compile Include="NFe\VeiculoTransporte.cs" />
+    <Compile Include="NFe\Volume.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

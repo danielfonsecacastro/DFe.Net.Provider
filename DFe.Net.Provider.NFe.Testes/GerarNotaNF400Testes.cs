@@ -10,13 +10,9 @@ namespace NotaNF400Testes
 {
     public class GerarNotaNF400Testes
     {
-
-    }
-    public class GerarNotaNF400TestesVersao
-    {
         private IGerarNota _gerarNota;
 
-        public GerarNotaNF400TestesVersao()
+        public GerarNotaNF400Testes()
         {
             _gerarNota = new GerarNotaNF400();
         }
@@ -43,16 +39,6 @@ namespace NotaNF400Testes
                 .Gerar();
 
             resultado.Versao.Should().Be(Versao.Versao400);
-        }
-    }
-
-    public class GerarNotaTestesIdentificacao
-    {
-        private IGerarNota _nota400;
-
-        public GerarNotaTestesIdentificacao()
-        {
-            _nota400 = new GerarNotaNF400();
         }
 
         [Fact]
@@ -83,7 +69,7 @@ namespace NotaNF400Testes
                 VersaoAplicativo = "1"
             };
 
-            var resultado = _nota400
+            var resultado = _gerarNota
                 .Identificacao(identificacao)
                 .Gerar();
 
@@ -91,11 +77,11 @@ namespace NotaNF400Testes
         }
 
         [Fact]
-        public void DeveGerarEmitenteCorretamente()
+        public void DeveriaGerarEmitenteCorretamente()
         {
             var emitente = new Emitente(new Endereco { }) { };
 
-            var resultado = _nota400
+            var resultado = _gerarNota
                 .Emitente(emitente)
                 .Gerar();
 
@@ -103,15 +89,28 @@ namespace NotaNF400Testes
         }
 
         [Fact]
-        public void DeveGerarDestinatarioCorretamente()
+        public void DeveriaGerarDestinatarioCorretamente()
         {
             var destinatario = new Destinatario(new Endereco { }) { };
 
-            var resultado = _nota400
+            var resultado = _gerarNota
                 .Destinatario(destinatario)
                 .Gerar();
 
             resultado.Destinatario.Should().Be(destinatario);
         }
+
+        [Fact]
+        public void DeveriaGerarTransporteCorretamente()
+        {
+            var transporte = new Transporte { Transportador = new Transportador(), VeiculoTransporte = new VeiculoTransporte() };
+
+            var resultado = _gerarNota
+                .Transporte(transporte)
+                .Gerar();
+
+            resultado.Transporte.Should().Be(transporte);
+        }
     }
+   
 }

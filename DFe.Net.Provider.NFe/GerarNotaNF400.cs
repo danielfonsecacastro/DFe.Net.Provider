@@ -39,6 +39,12 @@ namespace DFe.Net.Provider.NFe
             return this;
         }
 
+        public IGerarNota Transporte(Transporte transporte)
+        {
+            _nfe.Transporte = transporte;
+            return this;
+        }
+
         public NFeProvider Gerar()
         {
             return _nfe;

@@ -12,7 +12,7 @@ namespace DFe.Net.Provider.NFe
         public override IdentificacaoBase Identificacao { get; set; }
         public override Emitente Emitente { get; set; }
         public override Destinatario Destinatario { get; set; }
-
+        public override Transporte Transporte { get; set; }
         public override RetornoNFe Emitir()
         {
             var servicoNFe = new ServicosNFe(null/*_configuracoes.CfgServico*/);
@@ -22,7 +22,5 @@ namespace DFe.Net.Provider.NFe
 
             return null;
         }
-
-
     }
 }
