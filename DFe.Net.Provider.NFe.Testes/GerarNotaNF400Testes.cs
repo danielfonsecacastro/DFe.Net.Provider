@@ -3,8 +3,8 @@ using DFe.Net.Provider.Domain.NFe;
 using DFe.Net.Provider.Domain.NFe.Fluent;
 using DFe.Net.Provider.NFe;
 using FluentAssertions;
-using NUnit.Framework;
 using System;
+using Xunit;
 
 namespace NotaNF400Testes
 {
@@ -16,13 +16,12 @@ namespace NotaNF400Testes
     {
         private IGerarNota _gerarNota;
 
-        [SetUp]
-        public void Setup()
+        public GerarNotaNF400TestesVersao()
         {
             _gerarNota = new GerarNotaNF400();
         }
 
-        [Test]
+        [Fact]
         public void DeveGerarComUltimaVersaoQuandoNaoInformado()
         {
             var resultado = _gerarNota
@@ -32,11 +31,11 @@ namespace NotaNF400Testes
             resultado.Versao.Should().Be(Versao.Versao400);
         }
 
-        [Test]
-        [TestCase(Versao.Versao100)]
-        [TestCase(Versao.Versao200)]
-        [TestCase(Versao.Versao300)]
-        [TestCase(Versao.Versao310)]
+        [Theory]
+        [InlineData(Versao.Versao100)]
+        [InlineData(Versao.Versao200)]
+        [InlineData(Versao.Versao300)]
+        [InlineData(Versao.Versao310)]
         public void DeveGerarComVersao4MesmoQuandoInformadoVersao(Versao versao)
         {
             var resultado = _gerarNota.Versao(versao)
@@ -51,13 +50,12 @@ namespace NotaNF400Testes
     {
         private IGerarNota _nota400;
 
-        [SetUp]
-        public void Setup()
+        public GerarNotaTestesIdentificacao()
         {
             _nota400 = new GerarNotaNF400();
         }
 
-        [Test]
+        [Fact]
         public void DeveGerarIdentificacaoCorretamente()
         {
             var identificacao = new Identificacao
@@ -92,7 +90,7 @@ namespace NotaNF400Testes
             resultado.Identificacao.Should().Be(identificacao);
         }
 
-        [Test]
+        [Fact]
         public void DeveGerarEmitenteCorretamente()
         {
             var emitente = new Emitente(new Endereco { }) { };
@@ -104,7 +102,7 @@ namespace NotaNF400Testes
             resultado.Emitente.Should().Be(emitente);
         }
 
-        [Test]
+        [Fact]
         public void DeveGerarDestinatarioCorretamente()
         {
             var destinatario = new Destinatario(new Endereco { }) { };

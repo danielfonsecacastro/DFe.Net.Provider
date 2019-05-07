@@ -2,8 +2,8 @@
 using DFe.Net.Provider.Domain.Factories;
 using DFe.Net.Provider.Domain.NFe;
 using FluentAssertions;
-using NUnit.Framework;
 using System;
+using Xunit;
 
 namespace NotaNF400Testes
 {
@@ -11,19 +11,18 @@ namespace NotaNF400Testes
     {
         private IdentificacaoBase _identificao;
 
-        [SetUp]
-        public void Setup()
+        public IdentificacaoPadraoTestes()
         {
             _identificao = IdentificacaoFactory.Gerar(TipoIdentificacao.Padrao400);
         }
 
-        [Test]
+        [Fact]
         public void DeveriaGerarChaveAcessoCorretamente()
         {
             _identificao.ChaveAcesso.Should().NotBeNull();
         }
 
-        [Test]
+        [Fact]
         public void DeveriaGerarDataEmissaoCorretamente()
         {
             _identificao.DataEmissao.Should()
@@ -32,7 +31,7 @@ namespace NotaNF400Testes
                 .HaveYear(DateTime.Now.Year);
         }
 
-        [Test]
+        [Fact]
         public void DeveriaGerarDataSaidaEntradaCorretamente()
         {
             _identificao.DataSaidaEntrada.Should()
@@ -41,121 +40,121 @@ namespace NotaNF400Testes
                 .HaveYear(DateTime.Now.Year);
         }
 
-        [Test]
+        [Fact]
         public void DeveriaGerarConsumidorFinalCorretamente()
         {
             _identificao.ConsumidorFinal.Should().Be(ConsumidorFinal.Normal);
         }
 
-        [Test]
+        [Fact]
         public void DeveriaGerarFinalidadeCorretamente()
         {
             _identificao.Finalidade.Should().Be(Finalidade.Normal);
         }
 
-        [Test]
+        [Fact]
         public void DeveriaGerarModeloCorretamente()
         {
             _identificao.Modelo.Should().Be(ModeloDocumento.NFe);
         }
 
-        [Test]
+        [Fact]
         public void DeveriaGerarNaturezaOperacaoCorretamente()
         {
             _identificao.NaturezaOperacao.Should().Be(NaturezaOperacao.Venda);
         }
 
-        [Test]
+        [Fact]
         public void DeveriaGerarPresencaCompradorCorretamente()
         {
             _identificao.PresencaComprador.Should().Be(PresencaComprador.Presencial);
         }
 
-        [Test]
+        [Fact]
         public void DeveriaGerarSerieCorretamente()
         {
             _identificao.Serie.Should().Be(1);
         }
 
-        [Test]
+        [Fact]
         public void DeveriaGerarTipoAmbienteCorretamente()
         {
             _identificao.TipoAmbiente.Should().Be(TipoAmbiente.Producao);
         }
 
-        [Test]
+        [Fact]
         public void DeveriaGerarVersaoAplicativoCorretamente()
         {
             _identificao.VersaoAplicativo.Should().Be("4.0");
         }
 
-        [Test]
+        [Fact]
         public void DeveriaGerarTipoImpressaoCorretamente()
         {
             _identificao.TipoImpressao.Should().Be(TipoImpressao.DanfeNormalRetrato);
         }
 
-        [Test]
+        [Fact]
         public void DeveriaGerarTipoEmissaoCorretamente()
         {
             _identificao.TipoEmissao.Should().Be(TipoEmissao.Normal);
         }
 
-        [Test]
+        [Fact]
         public void DeveriaGerarTipoOperacaoCorretamente()
         {
             _identificao.TipoOperacao.Should().Be(TipoOperacao.Saida);
         }
 
-        [Test]
+        [Fact]
         public void DeveriaGerarProcessoEmissaoCorretamente()
         {
             _identificao.ProcessoEmissao.Should().Be(ProcessoEmissao.AplicativoContribuinte);
         }
 
-        [Test]
+        [Fact]
         public void NaoDeveriaGerarCodigoMunicipio()
         {
             _identificao.CodigoMunicipio.Should().Be(0);
         }
 
-        [Test]
+        [Fact]
         public void NaoDeveriaGerarDataContigencia()
         {
             _identificao.DataContigencia.Should().Be(DateTimeOffset.MinValue);
         }
 
-        [Test]
+        [Fact]
         public void NaoDeveriaGerarDestinoOperacao()
         {
             _identificao.DestinoOperacao.Should().BeNull();
         }
 
-        [Test]
+        [Fact]
         public void NaoDeveriaGerarDigitoVerificador()
         {
             _identificao.DigitoVerificador.Should().Be(0);
         }
 
-        [Test]
+        [Fact]
         public void NaoDeveriaGerarEstado()
         {
             _identificao.Estado.Should().Be(0);
         }
 
-        [Test]
+        [Fact]
         public void NaoDeveriaGerarIndicadorPagamento()
         {
             _identificao.IndicadorPagamento.Should().BeNull();
         }
 
-        [Test]
+        [Fact]
         public void NaoDeveriaGerarJustificativa()
         {
             _identificao.Justificativa.Should().BeNull();
         }
 
-        [Test]
+        [Fact]
         public void NaoDeveriaGerarNumero()
         {
             _identificao.Numero.Should().Be(0);

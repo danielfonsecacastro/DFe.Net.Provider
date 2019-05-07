@@ -1,12 +1,12 @@
 ﻿using DFe.Net.Provider.Domain.Enums;
-using NUnit.Framework;
 using System;
+using Xunit;
 
 namespace DFe.Net.Facade.Domain.Testes.Tipos
 {
     public class ConsumidorFinalTestes
     {
-        [Test]
+        [Fact]
         public void DeveriaConterAMesmaQuantidadeDeitens()
         {
             var resultado = Enum.GetNames(typeof(ConsumidorFinal)).Length;
