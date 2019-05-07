@@ -1,6 +1,6 @@
 # DFe.NET.Facade
 
-Esse projeto tem como objetivo criar uma facade para https://github.com/ZeusAutomacao/DFe.NET . O objetivo e gerar um código mais limpo e abstrair tudo que for possível para gerar NFe.
+Esse é um provider para geração de DFe, a primeira implementação e de NFe para isso eu estou usando ou criando uma facade do https://github.com/ZeusAutomacao/DFe.NET . O ZeusAutomacao/DFe.NET é o projeto mais atualizado e com maior numero de contribuições para quem quer gerar DFe como NFe, NFCe, MDF-e e CT-e.
 
 [![Build status](https://ci.appveyor.com/api/projects/status/qdcguitna4dbv7ii/branch/master?svg=true)](https://ci.appveyor.com/project/danielfonsecacastro/dfe-net-facade/branch/master)
 
