@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D2BA5268-A08F-4102-89DC-52E33C9A992E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DFe.Net.Provider.Domain</RootNamespace>
+    <AssemblyName>DFe.Net.Provider.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NFe\Enums\CRT.cs" />
+    <Compile Include="NFe\Enums\IndicadorIEDestinario.cs" />
+    <Compile Include="NFe\Factories\IdentificacaoFactory.cs" />
+    <Compile Include="NFe\ChaveAcesso.cs" />
+    <Compile Include="NFe\Destinatario.cs" />
+    <Compile Include="NFe\Emitente.cs" />
+    <Compile Include="NFe\Endereco.cs" />
+    <Compile Include="NFe\Identificacao.cs" />
+    <Compile Include="NFe\IdentificacaoBase.cs" />
+    <Compile Include="NFe\Enums\ConsumidorFinal.cs" />
+    <Compile Include="NFe\Enums\DestinoOperacao.cs" />
+    <Compile Include="NFe\Enums\Estado.cs" />
+    <Compile Include="NFe\Enums\Finalidade.cs" />
+    <Compile Include="NFe\Enums\IndicadorPagamento.cs" />
+    <Compile Include="NFe\Enums\ModeloDocumento.cs" />
+    <Compile Include="NFe\Enums\NaturezaOperacao.cs" />
+    <Compile Include="NFe\Enums\PresencaComprador.cs" />
+    <Compile Include="NFe\Enums\ProcessoEmissao.cs" />
+    <Compile Include="NFe\Enums\TipoAmbiente.cs" />
+    <Compile Include="NFe\Enums\TipoOperacao.cs" />
+    <Compile Include="NFe\Enums\TipoEmissao.cs" />
+    <Compile Include="NFe\Enums\TipoImpressao.cs" />
+    <Compile Include="NFe\Enums\Versao.cs" />
+    <Compile Include="NFe\Factories\IdentificacaoPadrao400.cs" />
+    <Compile Include="NFe\Fluent\IGerarNota.cs" />
+    <Compile Include="NFe\NFeProvider.cs" />
+    <Compile Include="NFe\RetornoNFe.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
