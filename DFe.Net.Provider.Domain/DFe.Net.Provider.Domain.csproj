@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NFe\Cobranca.cs" />
+    <Compile Include="NFe\Duplicata.cs" />
     <Compile Include="NFe\Enums\CRT.cs" />
     <Compile Include="NFe\Enums\IndicadorIEDestinario.cs" />
     <Compile Include="NFe\Enums\ModalidadeFrete.cs" />
@@ -49,6 +51,7 @@
     <Compile Include="NFe\Destinatario.cs" />
     <Compile Include="NFe\Emitente.cs" />
     <Compile Include="NFe\Endereco.cs" />
+    <Compile Include="NFe\Fatura.cs" />
     <Compile Include="NFe\Identificacao.cs" />
     <Compile Include="NFe\IdentificacaoBase.cs" />
     <Compile Include="NFe\Enums\ConsumidorFinal.cs" />

@@ -13,6 +13,8 @@ namespace DFe.Net.Provider.NFe
         public override Emitente Emitente { get; set; }
         public override Destinatario Destinatario { get; set; }
         public override Transporte Transporte { get; set; }
+        public override Cobranca Cobranca { get; set; }
+
         public override RetornoNFe Emitir()
         {
             var servicoNFe = new ServicosNFe(null/*_configuracoes.CfgServico*/);

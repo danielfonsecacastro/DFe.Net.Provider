@@ -111,6 +111,18 @@ namespace NotaNF400Testes
 
             resultado.Transporte.Should().Be(transporte);
         }
+
+        [Fact]
+        public void DeveriaGerarFaturaCorretamente()
+        {
+            var cobranca = new Cobranca { };
+
+            var resultado = _gerarNota
+                .Cobranca(cobranca)
+                .Gerar();
+
+            resultado.Cobranca.Should().Be(cobranca);
+        }
     }
    
 }

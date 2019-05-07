@@ -45,6 +45,12 @@ namespace DFe.Net.Provider.NFe
             return this;
         }
 
+        public IGerarNota Cobranca(Cobranca cobranca)
+        {
+            _nfe.Cobranca = cobranca;
+            return this;
+        }
+
         public NFeProvider Gerar()
         {
             return _nfe;

@@ -9,6 +9,7 @@ namespace DFe.Net.Provider.Domain.NFe.Fluent
         IGerarNota Emitente(Emitente emitente);
         IGerarNota Destinatario(Destinatario destinatario);
         IGerarNota Transporte(Transporte transporte);
+        IGerarNota Cobranca(Cobranca cobranca);
         NFeProvider Gerar();
     }
 }
